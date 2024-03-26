@@ -5,8 +5,9 @@ ENV MAVEN_VERSION 3.8.4
 ENV MAVEN_HOME /usr/share/maven
 ENV PATH ${MAVEN_HOME}/bin:${PATH}
 
-# Install Maven
-RUN curl -fsSL https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz | tar -xzC /usr/share \
+# Install curl and Maven
+RUN yum install -y curl \
+  && curl -fsSL https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz | tar -xzC /usr/share \
   && mv /usr/share/apache-maven-${MAVEN_VERSION} /usr/share/maven \
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
