@@ -27,7 +27,14 @@
 				"vscjava.vscode-java-debug",
 				"vscjava.vscode-java-test",
 				"vscjava.vscode-maven",
-				"github.copilot"
+				"github.copilot",
+				"eamodio.gitlens",
+				"sonarsource.sonarlint-vscode",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"redhat.vscode-xml",
+				"redhat.vscode-yaml",
+				"Pivotal.vscode-spring-boot",
+				"redhat.vscode-commons"
 			]
 		}
 	},
