@@ -1,6 +1,5 @@
 package com.thonbecker.endurance.configuration;
 
-import java.net.http.WebSocket;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
