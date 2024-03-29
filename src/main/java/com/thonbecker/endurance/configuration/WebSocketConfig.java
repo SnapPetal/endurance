@@ -1,5 +1,7 @@
 package com.thonbecker.endurance.configuration;
 
+import java.net.http.WebSocket;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
@@ -18,6 +20,6 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
   @Override
   public void registerStompEndpoints(StompEndpointRegistry registry) {
-    registry.addEndpoint("/gs-guide-websocket");
+    registry.addEndpoint("/encouragement-websocket");
   }
 }
