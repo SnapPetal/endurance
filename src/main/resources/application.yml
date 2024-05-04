@@ -19,7 +19,7 @@ spring:
             clientId: 59rkgaedh8hodrkpsngqcit4a5
             clientSecret: 1i0kfk2lomefnu34a8jgq8bvn0ujmcu2ip8i6p13khlmt910p5v2
             scope: openid  # OAuth2 client scope
-            redirectUri: https://endurance.thonbecker.com/login/oauth2/code/cognito
+            redirectUri: https://endurance.thonbecker.solutions/login/oauth2/code/cognito
             clientName: endurance
         provider:
           cognito:
