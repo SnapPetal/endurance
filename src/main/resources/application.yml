@@ -1,0 +1,23 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # Expose all management endpoints
+
+spring:
+  application:
+    name: endurance
+  security:
+    oauth2:
+      client:
+        registration:
+          cognito:
+            clientId: 59rkgaedh8hodrkpsngqcit4a5
+            clientSecret: 1i0kfk2lomefnu34a8jgq8bvn0ujmcu2ip8i6p13khlmt910p5v2
+            scope: openid  # OAuth2 client scope
+            redirect-uri: http://endurance.thonbecker.com/login/oauth2/code/cognito
+            clientName: personalUserpoolenduranceappclient16CD304B-9eIaUg7foqyL
+        provider:
+          cognito:
+            issuerUri: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_YOKSRMwld
+            user-name-attribute: cognito:username 
