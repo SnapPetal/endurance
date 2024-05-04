@@ -5,10 +5,12 @@ management:
         include: "*"  # Expose all management endpoints
 server:
   port: 8080
+  servlet:
+    context-path: /
+  forward-headers-strategy: native
 spring:
   application:
     name: endurance
-
   security:
     oauth2:
       client:
