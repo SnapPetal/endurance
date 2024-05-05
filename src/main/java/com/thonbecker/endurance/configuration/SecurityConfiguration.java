@@ -12,8 +12,10 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf(Customizer.withDefaults())
-                .authorizeHttpRequests(authz ->
-                        authz.requestMatchers("/").permitAll().anyRequest().authenticated())
+                .authorizeHttpRequests(authz -> authz.requestMatchers("/", "/actuator/**")
+                        .permitAll()
+                        .anyRequest()
+                        .authenticated())
                 .oauth2Login(Customizer.withDefaults())
                 .logout(httpSecurityLogoutConfigurer -> httpSecurityLogoutConfigurer.logoutSuccessUrl("/"));
         return http.build();
