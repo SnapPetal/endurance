@@ -19,7 +19,7 @@
 
   <properties>
     <java.version>21</java.version>
-    <sortpom.version>3.4.1</sortpom.version>
+    <sortpom.version>4.0.0</sortpom.version>
     <spotless.version>2.43.0</spotless.version>
   </properties>
 
