@@ -19,17 +19,18 @@ spring:
       client:
         registration:
           cognito:
-            clientId: 59rkgaedh8hodrkpsngqcit4a5
-            clientSecret: 1i0kfk2lomefnu34a8jgq8bvn0ujmcu2ip8i6p13khlmt910p5v2
-            scope: openid  # OAuth2 client scope
-            redirectUri: https://endurance.thonbecker.solutions/login/oauth2/code/cognito
+            clientId: 6g2e28pg567ac12j7j76fhif2c
+            clientSecret: bnoml8kjnuhsjcqml55bcbjhp9ga38idv7li0dhsggaem8ahvbj
+            scope: openid
+            redirectUri: https://global.thonbecker.solutions/login/oauth2/code/cognito
             clientName: endurance
         provider:
           cognito:
-            issuerUri: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_YOKSRMwld
+            issuerUri: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_P3iYgLmMA
             userNameAttribute: cognito:username
   session:
     jdbc:
+      initialize-schema: never
       flush-mode: on_save
       platform: postgresql
     timeout: 15d
