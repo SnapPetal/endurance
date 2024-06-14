@@ -2,10 +2,16 @@
 <databaseChangeLog
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
-    <changeSet id="1" author="SnapPetal">
+
+    <changeSet id="create-spring-session" author="SnapPetal">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="SPRING_SESSION"/>
+            </not>
+        </preConditions>
         <createTable tableName="SPRING_SESSION">
             <column name="PRIMARY_ID" type="char(36)">
-                <constraints nullable="false"/>
+                <constraints nullable="false" primaryKey="true" primaryKeyName="SPRING_SESSION_PK"/>
             </column>
             <column name="SESSION_ID" type="char(36)">
                 <constraints nullable="false"/>
@@ -24,9 +30,23 @@
             </column>
             <column name="PRINCIPAL_NAME" type="varchar(100)"/>
         </createTable>
+        <createIndex indexName="SPRING_SESSION_IX1" tableName="SPRING_SESSION" unique="true">
+            <column name="SESSION_ID"/>
+        </createIndex>
+        <createIndex indexName="SPRING_SESSION_IX2" tableName="SPRING_SESSION">
+            <column name="EXPIRY_TIME"/>
+        </createIndex>
+        <createIndex indexName="SPRING_SESSION_IX3" tableName="SPRING_SESSION">
+            <column name="PRINCIPAL_NAME"/>
+        </createIndex>
     </changeSet>
 
-    <changeSet id="2" author="SnapPetal">
+    <changeSet id="create-spring-session-attributes" author="SnapPetal">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="SPRING_SESSION_ATTRIBUTES"/>
+            </not>
+        </preConditions>
         <createTable tableName="SPRING_SESSION_ATTRIBUTES">
             <column name="SESSION_PRIMARY_ID" type="char(36)">
                 <constraints nullable="false"/>
@@ -38,42 +58,15 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
-    </changeSet>
-
-    <changeSet id="3" author="SnapPetal">
-        <addForeignKeyConstraint baseTableName="SPRING_SESSION_ATTRIBUTES"
-                                 baseColumnNames="SESSION_PRIMARY_ID"
-                                 constraintName="FK_SPRING_SESSION_ATTRIBUTES_SESSION_PRIMARY_ID"
-                                 referencedTableName="SPRING_SESSION"
-                                 referencedColumnNames="PRIMARY_ID"/>
-    </changeSet>
-
-    <changeSet id="4" author="SnapPetal">
-        <addPrimaryKey tableName="SPRING_SESSION"
-                       columnNames="PRIMARY_ID"
-                       constraintName="PK_SPRING_SESSION"/>
-    </changeSet>
-
-    <changeSet id="5" author="SnapPetal">
         <addPrimaryKey tableName="SPRING_SESSION_ATTRIBUTES"
                        columnNames="SESSION_PRIMARY_ID, ATTRIBUTE_NAME"
-                       constraintName="PK_SPRING_SESSION_ATTRIBUTES"/>
-    </changeSet>
-    <changeSet id="6" author="SnapPetal">
-        <createIndex indexName="SPRING_SESSION_IX1" tableName="SPRING_SESSION" unique="true">
-            <column name="SESSION_ID"/>
-        </createIndex>
-    </changeSet>
-
-    <changeSet id="7" author="SnapPetal">
-        <createIndex indexName="SPRING_SESSION_IX2" tableName="SPRING_SESSION">
-            <column name="EXPIRY_TIME"/>
-        </createIndex>
+                       constraintName="SPRING_SESSION_ATTRIBUTES_PK"/>
+        <addForeignKeyConstraint baseTableName="SPRING_SESSION_ATTRIBUTES"
+                                 baseColumnNames="SESSION_PRIMARY_ID"
+                                 constraintName="SPRING_SESSION_ATTRIBUTES_FK"
+                                 referencedTableName="SPRING_SESSION"
+                                 referencedColumnNames="PRIMARY_ID"
+                                 onDelete="CASCADE"/>
     </changeSet>
 
-    <changeSet id="8" author="SnapPetal">
-        <createIndex indexName="SPRING_SESSION_IX3" tableName="SPRING_SESSION">
-            <column name="PRINCIPAL_NAME"/>
-        </createIndex>
-    </changeSet>
 </databaseChangeLog>
