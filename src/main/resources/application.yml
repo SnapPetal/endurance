@@ -30,7 +30,6 @@ spring:
             userNameAttribute: cognito:username
   session:
     jdbc:
-      initialize-schema: always
       flush-mode: on_save
       platform: postgresql
     timeout: 15d
