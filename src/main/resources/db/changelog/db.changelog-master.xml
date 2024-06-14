@@ -30,6 +30,7 @@
             </column>
             <column name="PRINCIPAL_NAME" type="varchar(100)"/>
         </createTable>
+        <addUniqueConstraint constraintName="PRIMARY_ID_UNIQUE" tableName="SPRING_SESSION" columnNames="PRIMARY_ID" />
         <createIndex indexName="SPRING_SESSION_IX1" tableName="SPRING_SESSION" unique="true">
             <column name="SESSION_ID"/>
         </createIndex>
