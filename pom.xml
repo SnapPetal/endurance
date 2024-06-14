@@ -25,11 +25,6 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.github.blagerweij</groupId>
-      <artifactId>liquibase-sessionlock</artifactId>
-      <version>1.6.9</version>
-    </dependency>
-    <dependency>
       <groupId>org.liquibase</groupId>
       <artifactId>liquibase-core</artifactId>
     </dependency>
