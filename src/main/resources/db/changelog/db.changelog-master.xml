@@ -2,13 +2,11 @@
 <databaseChangeLog
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
-
     <changeSet id="create-spring-session" author="SnapPetal">
         <preConditions onFail="MARK_RAN">
-            <not>
-                <tableExists tableName="SPRING_SESSION"/>
-            </not>
+            <tableExists tableName="SPRING_SESSION"/>
         </preConditions>
+        <dropTable tableName="SPRING_SESSION"/>
         <createTable tableName="SPRING_SESSION">
             <column name="PRIMARY_ID" type="char(36)">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="SPRING_SESSION_PK"/>
@@ -30,7 +28,7 @@
             </column>
             <column name="PRINCIPAL_NAME" type="varchar(100)"/>
         </createTable>
-        <addUniqueConstraint constraintName="PRIMARY_ID_UNIQUE" tableName="SPRING_SESSION" columnNames="PRIMARY_ID" />
+        <addUniqueConstraint constraintName="PRIMARY_ID_UNIQUE" tableName="SPRING_SESSION" columnNames="PRIMARY_ID"/>
         <createIndex indexName="SPRING_SESSION_IX1" tableName="SPRING_SESSION" unique="true">
             <column name="SESSION_ID"/>
         </createIndex>
@@ -44,10 +42,9 @@
 
     <changeSet id="create-spring-session-attributes" author="SnapPetal">
         <preConditions onFail="MARK_RAN">
-            <not>
-                <tableExists tableName="SPRING_SESSION_ATTRIBUTES"/>
-            </not>
+            <tableExists tableName="SPRING_SESSION_ATTRIBUTES"/>
         </preConditions>
+        <dropTable tableName="SPRING_SESSION_ATTRIBUTES"/>
         <createTable tableName="SPRING_SESSION_ATTRIBUTES">
             <column name="SESSION_PRIMARY_ID" type="char(36)">
                 <constraints nullable="false"/>
@@ -69,5 +66,4 @@
                                  referencedColumnNames="PRIMARY_ID"
                                  onDelete="CASCADE"/>
     </changeSet>
-
 </databaseChangeLog>
