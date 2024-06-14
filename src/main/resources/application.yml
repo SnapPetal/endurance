@@ -25,3 +25,10 @@ spring:
           cognito:
             issuerUri: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_YOKSRMwld
             userNameAttribute: cognito:username
+  session:
+    jdbc:
+      initialize-schema: always
+  datasource:
+    url: jdbc:postgresql://ls-faa772382ed36bf26ba97947a5d06b5036152f6c.cmldxjsfqvn4.us-east-1.rds.amazonaws.com:5432/endurance
+    username: dbmasteruser
+    password: Z1}R,lr(Y.&|A|+^p=-9&IBRFR$>2)Ky
