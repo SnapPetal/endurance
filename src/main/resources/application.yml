@@ -3,6 +3,9 @@ management:
     web:
       exposure:
         include: "*"  # Expose all management endpoints
+  health:
+    redis:
+      enabled: off
 server:
   port: 8080
   servlet:
@@ -30,7 +33,11 @@ spring:
       initialize-schema: always
       flush-mode: on_save
       platform: postgresql
+    timeout: 15d
   datasource:
     url: jdbc:postgresql://ls-faa772382ed36bf26ba97947a5d06b5036152f6c.cmldxjsfqvn4.us-east-1.rds.amazonaws.com:5432/dbmaster
     username: dbmasteruser
     password: Z1}R,lr(Y.&|A|+^p=-9&IBRFR$>2)Ky
+  liquibase:
+    change-log: classpath:/db.changelog/changelog/db.changelog-master.xml
+    default-schema: public
