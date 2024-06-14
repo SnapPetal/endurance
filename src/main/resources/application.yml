@@ -39,4 +39,5 @@ spring:
     username: dbmasteruser
     password: Z1}R,lr(Y.&|A|+^p=-9&IBRFR$>2)Ky
   liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
     default-schema: public
