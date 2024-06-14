@@ -28,6 +28,8 @@ spring:
   session:
     jdbc:
       initialize-schema: always
+      flush-mode: on_save
+      platform: postgresql
   datasource:
     url: jdbc:postgresql://ls-faa772382ed36bf26ba97947a5d06b5036152f6c.cmldxjsfqvn4.us-east-1.rds.amazonaws.com:5432/endurance
     username: dbmasteruser
