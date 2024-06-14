@@ -31,6 +31,6 @@ spring:
       flush-mode: on_save
       platform: postgresql
   datasource:
-    url: jdbc:postgresql://ls-faa772382ed36bf26ba97947a5d06b5036152f6c.cmldxjsfqvn4.us-east-1.rds.amazonaws.com:5432/endurance
+    url: jdbc:postgresql://ls-faa772382ed36bf26ba97947a5d06b5036152f6c.cmldxjsfqvn4.us-east-1.rds.amazonaws.com:5432/dbmaster
     username: dbmasteruser
     password: Z1}R,lr(Y.&|A|+^p=-9&IBRFR$>2)Ky
