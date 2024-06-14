@@ -41,3 +41,7 @@ spring:
   liquibase:
     change-log: classpath:/db/changelog/db.changelog-master.yaml
     default-schema: public
+    url: jdbc:postgresql://ls-faa772382ed36bf26ba97947a5d06b5036152f6c.cmldxjsfqvn4.us-east-1.rds.amazonaws.com:5432/dbmaster
+    password: Z1}R,lr(Y.&|A|+^p=-9&IBRFR$>2)Ky
+    user: dbmasteruser
+    driver-class-name: org.postgresql.Driver
