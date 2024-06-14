@@ -34,13 +34,13 @@ spring:
       platform: postgresql
     timeout: 15d
   datasource:
-    url: jdbc:postgresql://ls-faa772382ed36bf26ba97947a5d06b5036152f6c.cmldxjsfqvn4.us-east-1.rds.amazonaws.com:5432/dbmaster
+    url: jdbc:postgresql://ls-ddd197eea6bb83c573f9dcd85c7091233de947c1.cmldxjsfqvn4.us-east-1.rds.amazonaws.com:5432/dbmaster
     username: dbmasteruser
-    password: Z1}R,lr(Y.&|A|+^p=-9&IBRFR$>2)Ky
+    password: .>M.Azs_^eHbY}78Fa*k$V(Akr<>=M5^
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.xml
     default-schema: public
-    url: jdbc:postgresql://ls-faa772382ed36bf26ba97947a5d06b5036152f6c.cmldxjsfqvn4.us-east-1.rds.amazonaws.com:5432/dbmaster
-    password: Z1}R,lr(Y.&|A|+^p=-9&IBRFR$>2)Ky
+    url: jdbc:postgresql://ls-ddd197eea6bb83c573f9dcd85c7091233de947c1.cmldxjsfqvn4.us-east-1.rds.amazonaws.com:5432/dbmaster
+    password: .>M.Azs_^eHbY}78Fa*k$V(Akr<>=M5^
     user: dbmasteruser
     driver-class-name: org.postgresql.Driver
