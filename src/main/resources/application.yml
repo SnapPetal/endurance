@@ -20,7 +20,7 @@ spring:
             clientSecret: bnoml8kjnuhsjcqml55bcbjhp9ga38idv7li0dhsggaem8ahvbj
             scope: openid
             redirectUri: https://global.thonbecker.solutions/login/oauth2/code/cognito
-            clientName: endurance
+            clientName: personalUserpoolenduranceappclient16CD304B-PsrAbzSNU4da
         provider:
           cognito:
             issuerUri: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_P3iYgLmMA
