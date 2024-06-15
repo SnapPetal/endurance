@@ -31,4 +31,10 @@
             );
         </sql>
     </changeSet>
+    <changeSet id="2" author="SnapPetal">
+        <dropAllForeignKeyConstraints baseTableName="spring_session"/>
+        <dropAllForeignKeyConstraints baseTableName="spring_session_attributes"/>
+        <dropTable tableName="spring_session"/>
+        <dropTable tableName="spring_session_attributes"/>
+    </changeSet>
 </databaseChangeLog>

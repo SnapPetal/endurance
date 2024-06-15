@@ -26,10 +26,6 @@ spring:
             issuerUri: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_P3iYgLmMA
             userNameAttribute: cognito:username
   session:
-    jdbc:
-      initialize-schema: never
-      flush-mode: on_save
-      platform: postgresql
     timeout: 15d
   datasource:
     url: jdbc:postgresql://ls-ddd197eea6bb83c573f9dcd85c7091233de947c1.cmldxjsfqvn4.us-east-1.rds.amazonaws.com:5432/dbmaster
