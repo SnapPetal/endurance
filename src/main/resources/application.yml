@@ -11,20 +11,6 @@ server:
 spring:
   application:
     name: endurance
-  security:
-    oauth2:
-      client:
-        registration:
-          cognito:
-            clientId: 23vj34rk4tm4ei2rsb5kp1rpfb
-            clientSecret: 1cbpgh7gsk5mht6e9p02o7k0ccgan9dl7blj9s827b3f5fk84ruq
-            scope: openid
-            redirectUri: https://global.thonbecker.solutions/login/oauth2/code/cognito
-            clientName: personalUserpoolenduranceappclient16CD304B-t0XQSfOpCedM
-        provider:
-          cognito:
-            issuerUri: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_DZ8a8Cqaw
-            userNameAttribute: email
   session:
     timeout: 15d
   datasource:
