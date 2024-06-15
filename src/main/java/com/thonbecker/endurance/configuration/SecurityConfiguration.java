@@ -1,7 +1,5 @@
 package com.thonbecker.endurance.configuration;
 
-import static org.springframework.security.config.http.SessionCreationPolicy.ALWAYS;
-
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +11,6 @@ import org.springframework.security.oauth2.client.registration.ClientRegistratio
 import org.springframework.security.oauth2.client.registration.ClientRegistrations;
 import org.springframework.security.oauth2.client.registration.InMemoryClientRegistrationRepository;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 
 @Configuration
 @AllArgsConstructor
@@ -58,10 +55,7 @@ public class SecurityConfiguration {
                         .permitAll()
                         .anyRequest()
                         .authenticated())
-                .oauth2Login(oauth2 -> oauth2.loginPage("/login/sso"))
-                .logout(httpSecurityLogoutConfigurer -> httpSecurityLogoutConfigurer.logoutSuccessUrl("/"))
-                .sessionManagement(sessionManagement -> sessionManagement.sessionCreationPolicy(ALWAYS))
-                .requestCache(requestCache -> requestCache.requestCache(new HttpSessionRequestCache()));
+                .oauth2Login(oauth2 -> oauth2.loginPage("/login/sso"));
         return http.build();
     }
 }
