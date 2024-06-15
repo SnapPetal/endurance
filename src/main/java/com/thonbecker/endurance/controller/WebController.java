@@ -16,12 +16,15 @@ public class WebController implements WebMvcConfigurer {
     public String login(HttpServletRequest request) {
         final String serverName = request.getServerName();
         log.info("Server name: {}", serverName);
-        final String redirectUrl =
-                switch (serverName) {
-                    case "global" -> "/oauth2/authorization/global";
-                    case "endurance" -> "/oauth2/authorization/endurance";
-                    default -> "/oauth2/authorization/local";
-                };
+        final String redirectUrl;
+
+        if (serverName.contains("global")) {
+            redirectUrl = "/oauth2/authorization/global";
+        } else if (serverName.contains("endurance")) {
+            redirectUrl = "/oauth2/authorization/endurance";
+        } else {
+            redirectUrl = "/oauth2/authorization/local";
+        }
 
         return "redirect:" + redirectUrl;
     }
