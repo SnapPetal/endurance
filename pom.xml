@@ -26,7 +26,7 @@
   <dependencies>
     <dependency>
       <groupId>com.hazelcast</groupId>
-      <artifactId>hazelcast</artifactId>
+      <artifactId>hazelcast-spring</artifactId>
       <version>5.4.0</version>
     </dependency>
     <dependency>
