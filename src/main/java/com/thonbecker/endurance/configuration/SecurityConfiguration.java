@@ -1,6 +1,6 @@
 package com.thonbecker.endurance.configuration;
 
-import static org.springframework.security.config.http.SessionCreationPolicy.IF_REQUIRED;
+import static org.springframework.security.config.http.SessionCreationPolicy.ALWAYS;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +21,7 @@ public class SecurityConfiguration {
                         .authenticated())
                 .oauth2Login(Customizer.withDefaults())
                 .logout(httpSecurityLogoutConfigurer -> httpSecurityLogoutConfigurer.logoutSuccessUrl("/"))
-                .sessionManagement(sessionManagement -> sessionManagement.sessionCreationPolicy(IF_REQUIRED))
+                .sessionManagement(sessionManagement -> sessionManagement.sessionCreationPolicy(ALWAYS))
                 .requestCache(requestCache -> requestCache.requestCache(new HttpSessionRequestCache()));
         return http.build();
     }

@@ -24,7 +24,7 @@ spring:
         provider:
           cognito:
             issuerUri: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_P3iYgLmMA
-            userNameAttribute: cognito:username
+            userNameAttribute: email
   session:
     timeout: 15d
   datasource:
