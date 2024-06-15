@@ -1,6 +1,7 @@
 package com.thonbecker.endurance.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,11 +9,13 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Controller
+@Slf4j
 public class WebController implements WebMvcConfigurer {
 
     @GetMapping("/login/sso")
     public String login(HttpServletRequest request) {
         final String serverName = request.getServerName();
+        log.info("Server name: {}", serverName);
         final String redirectUrl =
                 switch (serverName) {
                     case "global" -> "/oauth2/authorization/global";
